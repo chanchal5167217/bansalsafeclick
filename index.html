@@ -7,142 +7,273 @@
 </head>
 <body>
     <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        .mynav{
-            height: 15vh;
-            width: 100%;
-            background-color: blue;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            z-index: 1;
-        }
-        .mynav .logo{
-            width: 20%;
-            width: 10%;
-             height: 72%;
-    
-            margin-left: 26px;
-        }
-        .mynav .logo img{
-            height: 100%;
-            width: 100%;
-        }
-        .mynav ul{
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            margin-right: 10px;
+        * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
-        }
-        .mynav ul li a{
-            text-decoration: none;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .content{
-            width: 100%;
-            position: relative;
-            top: 25vh;
-        }
-        .content .cont1{
-            display: flex;
-            justify-content: space-around;
-            height: 40vh;
-        }
-        .cont1 div img{
-            width: 100%;
-            height: 100%;
-            margin-top: 40px;
-        }
-        .content h1{
-            text-align: center;
-            color: blue;
-            font-size: 32px;
-        }
-         .img{
-            left: 42%;
+.mynav {
+    height: 15vh;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    padding: 0 10px; /* Added padding for better spacing on small screens */
+}
+
+.mynav .logo {
+    width: 20%;
+    height: 72%;
+    margin-left: 26px;
+}
+
+.mynav .logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.mynav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 10px;
+}
+
+.mynav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    top: 25vh;
+    padding: 0 20px; /* Added padding to avoid text hitting the edges on small screens */
+}
+
+.content h1 {
+    text-align: center;
+    color: blue;
+    font-size: 32px;
+}
+
+.img {
+    left: 42%;
     position: relative;
     height: 40vh;
     width: 40vh;
-    
     margin-top: 46px;
+}
 
-        }
-        .about{
-            height: 40vh;
-            width: 80%;
-            position: relative;
-            top: 80px;
-            left: 10%;
-            background-color: antiquewhite;
-            box-shadow: 8px 10px 10px black;
-        }
-        .about h1{
-            position: relative;
-            top: 10%;
-        }
-        .about p{
-            font-size: 22px;
-            text-align: justify;
-            position: relative;
-            top: 20%;
-            padding: 20px;
-        }
-        .about1{
-            height: 40vh;
-            width: 80%;
-            position: relative;
-            top: 100px;
-            left: 10%;
-            background-color: antiquewhite;
-            box-shadow: 8px 10px 10px black;
-        }
-        .about1 h1{
-            position: relative;
-            top: 10%;
-        }
-        .about1 p{
-            font-size: 22px;
-            text-align: justify;
-            position: relative;
-            top: 20%;
-            padding: 20px;
-        }
-        .tbl{
-            width: 100%;
-            position: relative;
-            top: 317px;
-            background-color: beige;
-        }
-        .tbl .prbm{
-            display: flex;
-            
-        }
-        .tbl .prbm .p1,.p2{
-            height: 10vh;
-        width: 50%;    
-            text-align: justify;
-            margin-top: 50px;
-            font-size: 22px;
+.cont1 {
+    display: flex;
+    justify-content: space-around;
+    height: 40vh;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    gap: 10px;
+}
+
+.cont1 div img {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.about,
+.about1 {
+    height: 40vh;
+    width: 80%;
+    position: relative;
+    top: 80px;
+    left: 10%;
+    background-color: antiquewhite;
+    box-shadow: 8px 10px 10px black;
+    margin-bottom: 20px;
+}
+
+.about h1,
+.about1 h1 {
+    position: relative;
+    top: 10%;
+}
+
+.about p,
+.about1 p {
+    font-size: 22px;
+    text-align: justify;
+    position: relative;
+    top: 20%;
+    padding: 20px;
+}
+
+.tbl {
+    width: 100%;
+    position: relative;
+    top: 317px;
+    background-color: beige;
+}
+
+.tbl .prbm {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of the columns for smaller screens */
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.tbl .prbm .p1,
+.p2 {
+    width: 48%; /* Adjusted width for mobile responsiveness */
+    text-align: justify;
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+.myimg {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    top: 7px;
+}
+
+.myimg img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile and Tablet responsiveness */
+@media (max-width: 1024px) {
+    /* Tablet devices */
+    .mynav ul {
+        gap: 20px;
     }
-    .myimg{
+
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .img {
+        left: 30%;
+        height: 30vh;
+        width: 30vh;
+    }
+
+    .cont1 {
+        flex-direction: column; /* Stack images vertically on tablets */
+        align-items: center;
+    }
+
+    .about, .about1 {
+        width: 90%;
+        height: auto; /* Allow the height to auto-adjust for content */
+        top: 20px;
+        left: 5%;
+    }
+
+    .tbl .prbm {
+        flex-direction: column; /* Stack the problem statements on top of each other */
+        align-items: center;
+    }
+
+    .tbl .prbm .p1, .p2 {
+        width: 90%; /* Use a wider width for better readability on tablets */
+        margin-top: 20px;
+    }
+
+    .myimg {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile devices */
+    .mynav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mynav ul li a {
+        font-size: 20px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .img {
+        left: 50%;
+        width: 50vh;
+        height: 30vh;
+        margin-top: 20px;
+    }
+
+    .cont1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont1 div img {
+        margin-top: 10px;
+        width: 80%; /* Reduce image size on mobile */
+        height: auto;
+    }
+
+    .about, .about1 {
+        width: 95%;
+        top: 10px;
+        left: 2.5%;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .tbl .prbm .p1, .p2 {
         width: 100%;
-        height: 90vh;
-        position: relative;
-        top: 7px;
-        
+        font-size: 18px; /* Smaller font size for mobile devices */
+        margin-top: 20px;
     }
-    .myimg img{
-        width: 100%;
-        height: 100%;
+
+    .myimg {
+        height: 50vh;
     }
+}
+
+@media (max-width: 480px) {
+    /* Very small mobile screens */
+    .mynav ul {
+        gap: 10px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .img {
+        left: 50%;
+        width: 60vh;
+        height: 30vh;
+        margin-top: 10px;
+    }
+
+    .about, .about1 {
+        width: 95%;
+        padding: 5px;
+    }
+
+    .tbl .prbm .p1, .p2 {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .myimg {
+        height: 40vh;
+    }
+}
+
 
     </style>
     
