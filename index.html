@@ -4,389 +4,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BGIcybersafetyevents</title>
-</head>
-<body>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
     <style>
         * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
-.mynav {
-    height: 15vh;
-    width: 100%;
-    background-color: blue;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1;
-    padding: 0 10px; /* Added padding for better spacing on small screens */
-}
+        body {
+            background-color: #f8f9fa;
+        }
 
-.mynav .logo {
-    width: 20%;
-    height: 72%;
-    margin-left: 26px;
-}
+        /* Navigation Bar */
+        .mynav {
+            height: 15vh;
+            width: 100%;
+            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.mynav .logo img {
-    height: 100%;
-    width: 100%;
-}
+        .mynav .logo img {
+            height: 100%;
+            width: 100%;
+        }
 
-.mynav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin-right: 10px;
-}
+        /* Navbar Menu */
+        .mynav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
 
-.mynav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
+        .mynav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.content {
-    width: 100%;
-    position: relative;
-    top: 25vh;
-    padding: 0 20px; /* Added padding to avoid text hitting the edges on small screens */
-}
+        .mynav ul li a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
 
-.content h1 {
-    text-align: center;
-    color: blue;
-    font-size: 32px;
-}
+        /* Content Section */
+        .content {
+            padding: 100px 20px 20px;
+        }
 
-.img {
-    left: 42%;
-    position: relative;
-    height: 40vh;
-    width: 40vh;
-    margin-top: 46px;
-}
+        .content h1 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-.cont1 {
-    display: flex;
-    justify-content: space-around;
-    height: 40vh;
-    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
-    gap: 10px;
-}
+        .img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
 
-.cont1 div img {
-    width: 100%;
-    height: 100%;
-    margin-top: 40px;
-}
+        /* About Section */
+        .about, .about1 {
+            background-color: #f0f8ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-.about,
-.about1 {
-    height: 40vh;
-    width: 80%;
-    position: relative;
-    top: 80px;
-    left: 10%;
-    background-color: antiquewhite;
-    box-shadow: 8px 10px 10px black;
-    margin-bottom: 20px;
-}
+        .about h1, .about1 h1 {
+            color: #007bff;
+            font-size: 1.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
 
-.about h1,
-.about1 h1 {
-    position: relative;
-    top: 10%;
-}
+        .about p, .about1 p {
+            font-size: 1rem;
+            text-align: justify;
+            line-height: 1.5;
+        }
 
-.about p,
-.about1 p {
-    font-size: 22px;
-    text-align: justify;
-    position: relative;
-    top: 20%;
-    padding: 20px;
-}
+        /* Table of Problem Statements */
+        .tbl .prbm {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
 
-.tbl {
-    width: 100%;
-    position: relative;
-    top: 317px;
-    background-color: beige;
-}
+        .tbl .prbm .p1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #007bff;
+        }
 
-.tbl .prbm {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping of the columns for smaller screens */
-    justify-content: space-between;
-    margin-top: 20px;
-}
+        .tbl .prbm .p2 {
+            font-size: 1rem;
+            color: #555;
+        }
 
-.tbl .prbm .p1,
-.p2 {
-    width: 48%; /* Adjusted width for mobile responsiveness */
-    text-align: justify;
-    margin-top: 50px;
-    font-size: 22px;
-}
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .content h1 {
+                font-size: 2rem;
+            }
 
-.myimg {
-    width: 100%;
-    height: 90vh;
-    position: relative;
-    top: 7px;
-}
+            .mynav ul {
+                gap: 25px;
+            }
+        }
 
-.myimg img {
-    width: 100%;
-    height: 100%;
-}
+        @media (max-width: 768px) {
+            .mynav ul {
+                flex-direction: column;
+                gap: 15px;
+                background-color: cornflowerblue;
+            }
 
-/* Mobile and Tablet responsiveness */
-@media (max-width: 1024px) {
-    /* Tablet devices */
-    .mynav ul {
-        gap: 20px;
-    }
+            .mynav ul li a {
+                font-size: 1.2rem;
+            }
 
-    .content h1 {
-        font-size: 28px;
-    }
+            .content h1 {
+                font-size: 1.8rem;
+            }
 
-    .img {
-        left: 30%;
-        height: 30vh;
-        width: 30vh;
-    }
+            .img {
+                width: 80%;
+                margin: 20px auto;
+            }
 
-    .cont1 {
-        flex-direction: column; /* Stack images vertically on tablets */
-        align-items: center;
-    }
+            .about, .about1 {
+                padding: 15px;
+            }
 
-    .about, .about1 {
-        width: 90%;
-        height: auto; /* Allow the height to auto-adjust for content */
-        top: 20px;
-        left: 5%;
-    }
+            .tbl .prbm .p1, .p2 {
+                font-size: 1rem;
+            }
+        }
 
-    .tbl .prbm {
-        flex-direction: column; /* Stack the problem statements on top of each other */
-        align-items: center;
-    }
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 1.6rem;
+            }
 
-    .tbl .prbm .p1, .p2 {
-        width: 90%; /* Use a wider width for better readability on tablets */
-        margin-top: 20px;
-    }
+            .tbl .prbm .p1, .p2 {
+                font-size: 0.9rem;
+            }
 
-    .myimg {
-        height: 70vh;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Mobile devices */
-    .mynav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .mynav ul li a {
-        font-size: 20px;
-    }
-
-    .content h1 {
-        font-size: 24px;
-    }
-
-    .img {
-        left: 50%;
-        width: 50vh;
-        height: 30vh;
-        margin-top: 20px;
-    }
-
-    .cont1 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cont1 div img {
-        margin-top: 10px;
-        width: 80%; /* Reduce image size on mobile */
-        height: auto;
-    }
-
-    .about, .about1 {
-        width: 95%;
-        top: 10px;
-        left: 2.5%;
-        margin-bottom: 10px;
-        padding: 10px;
-    }
-
-    .tbl .prbm .p1, .p2 {
-        width: 100%;
-        font-size: 18px; /* Smaller font size for mobile devices */
-        margin-top: 20px;
-    }
-
-    .myimg {
-        height: 50vh;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Very small mobile screens */
-    .mynav ul {
-        gap: 10px;
-    }
-
-    .content h1 {
-        font-size: 20px;
-    }
-
-    .img {
-        left: 50%;
-        width: 60vh;
-        height: 30vh;
-        margin-top: 10px;
-    }
-
-    .about, .about1 {
-        width: 95%;
-        padding: 5px;
-    }
-
-    .tbl .prbm .p1, .p2 {
-        font-size: 16px;
-        margin-top: 15px;
-    }
-
-    .myimg {
-        height: 40vh;
-    }
-}
-
-
+            .mynav ul li a {
+                font-size: 1rem;
+            }
+        }
     </style>
-    
-        <nav class="mynav">
-            <div class="logo">
-                <img src="image/logo.jpg" alt="">
-            </div>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="https://forms.gle/5aVy2QTcqmosgTN67" target="_blank">Registration</a></li>
-                <li><a href="">Quiz</a></li>
-                <li><a href="">About BGI</a></li>
-                <li><a href="">Call 1930</a></li>
+</head>
+<body>
+
+    <nav class="mynav navbar navbar-expand-lg navbar-light">
+        <div class="logo">
+            <img src="image/logo.jpg" alt="Logo" class="navbar-brand">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://forms.gle/5aVy2QTcqmosgTN67" target="_blank">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About BGI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Call 1930</a>
+                </li>
             </ul>
-        </nav>
+        </div>
+    </nav>
    
     <section class="content">
-        <h1>Cyber Awareness Quiz competition oraganized on 10 th feb 2025</h1>
-        <img src="image/logo.jpg" alt="" class="img">
-        <div class="cont1">
-            <div><img src="image/PHOTO-2025-01-31-19-00-46 1.png" alt=""></div>
-            <div><img src="image/police 2.png" alt=""></div>
-            <div><img src="image/cyb.jpg" alt=""></div>
+        <h1>Cyber Awareness Quiz competition organized on 10th Feb 2025</h1>
+        <div class="text-center">
+            <img src="image/logo.jpg" alt="" class="img-fluid">
         </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="image/PHOTO-2025-01-31-19-00-46 1.png" class="card-img-top" alt="Image">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="image/police 2.png" class="card-img-top" alt="Police Image">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="image/cyb.jpg" class="card-img-top" alt="Cyber Image">
+                </div>
+            </div>
+        </div>
+
         <div class="about">
             <h1>ABOUT BANSAL GROUP OF INSTITUTIONS</h1>
             <p>
                 Bansal Tech Professionals manages Bansal Group of Institutes. Bansal Group of Institutes, Bhopal is built on the foundation of trust paving the way for a beaming and extraordinary future for its intellectual and creative minds. It attempts to provide pragmatic and skill-based learning with its 24 years of experience in excellence. Furthermore, it lays out a bridge made of each step with the highest placement track record, remarkable infrastructure, and super supportive 130+ faculty members. We inculcate imperative learning and disseminate futuristically innovative ideas contributing to massive nation-building. We create a progressive ambiance that lays out the structure of hope and trust to strengthen the bond between the students and the institution.
             </p>
         </div>
-        <div class="award">
-            <div class="box">
-                
-            </div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-        </div>
-        <div class="about1" style="background-color: aliceblue; box-shadow: none; width: 100%; left: 0%;">
+        
+        <div class="about1">
             <h1>‘Safe Click’ Drive Launched To Control Cyber Crimes In Madhya Pradesh</h1>
             <p>
-                With an objective to raise cyber awareness among people, Madhya Pradesh Police has launched state-wide special awareness drive ‘safe click’ on Saturday which will conclude on February 11 on the occasion of Safer Internet Day.
-Under the programme, police will raise awareness among internet users and bank customers not only in urban areas but even in remote rural areas of the state.
+                With an objective to raise cyber awareness among people, Madhya Pradesh Police has launched a state-wide special awareness drive ‘safe click’ on Saturday which will conclude on February 11 on the occasion of Safer Internet Day. Under the programme, police will raise awareness among internet users and bank customers not only in urban areas but even in remote rural areas of the state.
             </p>
         </div>
-        <div class="about1" style="background-color: aliceblue; box-shadow: none; width: 100%; height: 30vh; left: 0%;">
+
+        <div class="about1">
             <h1>Guidelines - Contest Rules</h1>
             <p>The participants will have to abide by the official rules provided by the institution.</p>
         </div>
-        
-        
-        
-       
 
-        <div class="about1" style="background-color: aliceblue; box-shadow: none; width: 100%; left: 0%;">
+        <div class="about1">
             <h1>Team Participation Requirement:</h1>
             <p>
                 Participation can be either by an individual (single-member) team or a group consisting of up to a maximum of 3 members. The team is collectively responsible for adhering to the terms and conditions. If any member violates the terms & conditions or engages in illegal activity, the entire team will be disqualified.
-               </p>
+            </p>
         </div>
 
-        <div class="about" style="height: 10vh; left: 0px; width: 100%;">
+        <div class="about">
             <h1>PROBLEM <br> STATEMENTS</h1>
         </div>
     </section>
-    <section class="tbl" >
-        <div class="prbm">
-            <p class="p1">Secure Password Manager</p>
-            <p class="p2">Create a user-friendly password manager with multi-factor authentication and encryption for women entrepreneurs and professionals.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Cybersecurity Awareness Bot</p>
-            <p class="p2">Build a chatbot that educates users on common cyber threats and provides best practices for online safety.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Women’s Safety in Cyberspace</p>
-            <p class="p2">Develop a platform that helps women report and track cyber harassment while ensuring anonymity and generate message if she feels like something is going unhealthy or unfair.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Digital Privacy for Social Media</p>
-            <p class="p2">Create an open-source tool that helps users assess and improve their social media privacy settings.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Cybersecurity Quiz App</p>
-            <p class="p2">Develop an engaging mobile app that teaches cybersecurity basics through quizzes and challenges.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Safe Browsing Plugin/sw</p>
-            <p class="p2">Develop a browser extension that warns users about unsafe websites and prevents access to malicious links.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Fake News & Misinformation Detector</p>
-            <p class="p2">Build a tool that verifies the authenticity of news articles and social media posts using AI.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Cybersecurity Emergency Kit</p>
-            <p class="p2">Create a mobile app that provides step-by-step guides for users who fall victim to cyber attacks.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Suspicious Link Scanner</p>
-            <p class="p2">Develop a simple website or tool that checks URLs for malware before opening them.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">One-Click Privacy Settings Adjuster</p>
-            <p class="p2">Design a tool that lets users apply strong privacy settings to all their social media accounts at once.</p>
-        </div>
-        <div class="prbm">
-            <p class="p1">Cybercrime & safety awereness</p>
-            <p class="p2">Create a Website that provides awareness about the cyber safety for society.</p>
-        </div>
-        
-    </section>
-    
 
+    <section class="tbl">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Secure Password Manager</p>
+                        <p class="p2">Create a user-friendly password manager with multi-factor authentication and encryption for women entrepreneurs...</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Cybersecurity Awareness Bot</p>
+                        <p class="p2">Build a chatbot that educates users on common cyber threats and provides best practices for online safety.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Women’s Safety in Cyberspace</p>
+                        <p class="p2">Develop a platform that helps women report and track cyber harassment while ensuring anonymity and generate message if she feels like something is going unhealthy or unfair.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Digital Privacy for Social Media</p>
+                        <p class="p2">Create an open-source tool that helps users assess and improve their social media privacy settings.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Cybersecurity Quiz App</p>
+                        <p class="p2">Develop an engaging mobile app that teaches cybersecurity basics through quizzes and challenges.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Safe Browsing Plugin</p>
+                        <p class="p2">Develop a browser extension that warns users about unsafe websites and prevents access to malicious links.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Fake News & Misinformation Detector</p>
+                        <p class="p2">Build a tool that verifies the authenticity of news articles and social media posts using AI.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Cybersecurity Emergency Kit</p>
+                        <p class="p2">Create a mobile app that provides step-by-step guides for users who fall victim to cyber attacks.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Suspicious Link Scanner</p>
+                        <p class="p2">Develop a simple website or tool that checks URLs for malware before opening them.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">One-Click Privacy Settings Adjuster</p>
+                        <p class="p2">Design a tool that lets users apply strong privacy settings to all their social media accounts at once.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="prbm">
+                        <p class="p1">Cybercrime & safety awereness</p>
+                        <p class="p2">Create a Website that provides awareness about the cyber safety for society.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
